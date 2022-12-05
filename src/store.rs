@@ -4,6 +4,7 @@ use std::{collections::HashMap, time::SystemTime};
 static mut STORE: Option<Store> = None;
 
 pub struct Store {
+    pub some_stuff: HashMap<String, String>,  
     pub key_store: HashMap<String, String>,
     pub date_time: HashMap<String, SystemTime>,
 }
@@ -25,6 +26,7 @@ impl Store {
     pub fn init() {
         unsafe {
             STORE = Some(Store {
+                some_stuff: HashMap::new(), 
                 key_store: HashMap::new(),
                 date_time: HashMap::new(),
             })
